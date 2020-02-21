@@ -102,7 +102,7 @@ CONTAINS
     real(8), intent(in) :: POC            ! Particulate organic carbon (DOC: umol L-1)
     real(8), intent(in) :: PHY1           ! phytoplankton (umol C L-1) small phytoplankton
     real(8), intent(in) :: PHY2           ! phytoplankton (umol C L-1) diatom
-    real(8), intent(in) :: PHY3           ! phytoplankton (umol C L-1) coccolithoporid --ADDED BY AMRI, JAN 2020--
+    real(8), intent(in) :: PHY3           ! phytoplankton (umol C L-1) coccolithopores --ADDED BY AMRI, JAN 2020--
     real(8), intent(in) :: PHY4           ! phytoplankton (umol C L-1) diazotroph      --ADDED BY AMRI, FEB 2020--
     real(8), intent(in) :: ZOO            ! zooplankton (umol C L-1)
 #if defined CARBON_ISOTOPE
