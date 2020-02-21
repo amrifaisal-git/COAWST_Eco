@@ -555,7 +555,7 @@ CONTAINS
 
     Ddop = k_Ddop * exp(b_Ddop * Tmp) * DOP   !DOP -> PO4
     IF(DOx <= 0.0d0) THEN !-----For Error handling
-      Ddon = 0.0d0
+      Ddop = 0.0d0
     ENDIF
 #endif
 
