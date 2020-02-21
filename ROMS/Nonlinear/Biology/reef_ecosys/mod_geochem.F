@@ -416,7 +416,7 @@ contains
 
 
 ! ********************************************************************
-! alcite saturation state
+! Calcite saturation state
 ! ********************************************************************
 
   real(8)  function Wcal_fromcCO3(cCO3, T, S) ! Calcite saturation state
@@ -1606,7 +1606,7 @@ contains
 
   end function PHY1_Profile
 
-!--- Phytoplankton1 -------------------------------------
+!--- Phytoplankton2 -------------------------------------
 
   real(8) function PHY2_Profile(d)
     implicit none
@@ -1620,17 +1620,51 @@ contains
 
   end function PHY2_Profile
 
+!--- Phytoplankton3 -------------------------------------
+
+  real(8) function PHY3_Profile(d)
+    implicit none
+    real(8), intent(in) :: d   ! elevation (m) = -depth  
+ 
+    IF(( d .GE. -100.0d0) .AND. ( d .LE. -150.0d0) ) THEN
+      PHY3_Profile = 0.0d0
+    ELSE IF(( d .LT. -100.0d0) .AND. ( d .GT. -150.0d0)) THEN
+      PHY3_Profile = 0.8d0
+    END IF
+
+  end function PHY3_Profile
+
+!--- Phytoplankton4 -------------------------------------
+
+  real(8) function PHY4_Profile(d)
+    implicit none
+    real(8), intent(in) :: d   ! elevation (m) = -depth  
+ 
+    IF(( d .GE. -100.0d0) .AND. ( d .LE. -150.0d0) ) THEN
+      PHY4_Profile = 0.0d0
+    ELSE IF(( d .LT. -100.0d0) .AND. ( d .GT. -150.0d0)) THEN
+      PHY4_Profile = 0.8d0
+    END IF
+
+  end function PHY4_Profile
+
 !--- Zooplankton -------------------------------------
 
   real(8) function ZOO_Profile(d)
     implicit none
     real(8), intent(in) :: d   ! elevation (m) = -depth  
- 
-    IF(( d .GE. -400.0d0) .AND. ( d .LE. 0.0d0 )) THEN
-      ZOO_Profile = 2.5d0+(d/200.0d0)    ! umolC L-1
-    ELSE IF( d .LT. -400.0d0) THEN
-      ZOO_Profile = 0.0d08                            ! umolC L-1
-    END IF
+
+    IF(( d .GE. -100.0d0) .AND. ( d .LE. -150.0d0) ) THEN
+      ZOO_Profile = 0.0d0
+    ELSE IF(( d .LT. -100.0d0) .AND. ( d .GT. -150.0d0)) THEN
+      ZOO_Profile = 0.32d0
+    END IF    
+
+!    IF(( d .GE. -400.0d0) .AND. ( d .LE. 0.0d0 )) THEN
+!      ZOO_Profile = 0.32d0+(d*0.24d0/400.0d0)    ! umolC L-1
+!    ELSE IF( d .LT. -400.0d0) THEN
+!      ZOO_Profile = 0.0d08                ! umolC L-1
+!    END IF
 
   end function ZOO_Profile
 
