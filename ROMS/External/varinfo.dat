@@ -9282,6 +9282,17 @@
     'r3dvar'
     1.0d0
 
+!---------------------ADDED BY AMRI, FEB 2020--------------------------
+  'CaCO3'                                            ! Input/Output
+    'calcium carbonate concentration'
+    'umol L-1'                     ! [umol L-1]
+    'CaCO3, scalar, series'
+    'ocean_time'
+    'idTvar(iCaCO3)'
+    'r3dvar'
+    1.0d0
+!---------------------ADDED BY AMRI, FEB 2020--------------------------
+
   'DOC'                                           ! Input/Output
     'dissolved organic carbon'
     'umolC L-1'                       ! [umolC L-1]
@@ -9317,6 +9328,26 @@
     'idTvar(iPhy2)'
     'r3dvar'
     1.0d0
+
+!---------------------ADDED BY AMRI, JAN 2020--------------------------
+  'phytoplankton3'                                    ! Input/Output
+    'phytoplankton3 concentration'
+    'umolC L-1'                     ! [umolC L-1]
+    'phytoplankton3, scalar, series'
+    'ocean_time'
+    'idTvar(iPhy3)'
+    'r3dvar'
+    1.0d0
+
+  'phytoplankton4'                                    ! Input/Output
+    'phytoplankton4 concentration'
+    'umolC L-1'                     ! [umolC L-1]
+    'phytoplankton4, scalar, series'
+    'ocean_time'
+    'idTvar(iPhy4)'
+    'r3dvar'
+    1.0d0
+!---------------------ADDED BY AMRI, JAN 2020--------------------------
 
   'zooplankton'                                      ! Input/Output
     'zooplankton concentration'
@@ -9942,6 +9973,43 @@
     'nulvar'
     1.0d0
 
+!---------------------ADDED BY AMRI, FEB 2020--------------------------
+  'CaCO3_east'                                       ! Input
+    'CaCO3 eastern boundary condition'
+    'umol L-1'                                       ! [umol L-1]
+    'CaCO3_east, scalar, series'
+    'CaCO3_time'
+    'idTbry(ieast,iCaCO3)'
+    'nulvar'
+    1.0d0
+
+  'CaCO3_west'                                       ! Input
+    'CaCO3 western boundary condition'
+    'umol L-1'                                       ! [umol L-1]
+    'CaCO3_west, scalar, series'
+    'CaCO3_time'
+    'idTbry(iwest,iCaCO3)'
+    'nulvar'
+    1.0d0
+
+  'CaCO3_north'                                      ! Input
+    'CaCO3 northern boundary condition'
+    'umol L-1'                                       ! [umol L-1]
+    'CaCO3_north, scalar, series'
+    'CaCO3_time'
+    'idTbry(inorth,iCaCO3)'
+    'nulvar'
+    1.0d0
+
+  'CaCO3_south'                                      ! Input
+    'CaCO3 southern boundary condition'
+    'umol L-1'                                       ! [umol L-1]
+    'CaCO3_south, scalar, series'
+    'CaCO3_time'
+    'idTbry(isouth,iCaCO3)'
+    'nulvar'
+    1.0d0
+!---------------------ADDED BY AMRI, FEB 2020--------------------------
 
   'DOC_east'                                         ! Input
     'dissolved organic carbon eastern boundary condition'
@@ -10089,6 +10157,79 @@
     'nulvar'
     1.0d0
 
+!---------------------ADDED BY AMRI, JAN 2020--------------------------
+  'phy3_east'                                        ! Input
+    'phytoplankton3 eastern boundary condition'
+    'umolC L-1'                                      ! [umolC L-1]
+    'phy3_east, scalar, series'
+    'phy3_time'
+    'idTbry(ieast,iPhy3)'
+    'nulvar'
+    1.0d0
+
+  'phy3_west'                                        ! Input
+    'phytoplankton3 western boundary condition'
+    'umolC L-1'                                      ! [umolC L-1]
+    'phy3_west, scalar, series'
+    'phy3_time'
+    'idTbry(iwest,iPhy3)'
+    'nulvar'
+    1.0d0
+
+  'phy3_north'                                        ! Input
+    'phytoplankton3 northern boundary condition'
+    'umolC L-1'                                      ! [umolC L-1]
+    'phy3_north, scalar, series'
+    'phy3_time'
+    'idTbry(inorth,iPhy3)'
+    'nulvar'
+    1.0d0
+
+  'phy3_south'                                        ! Input
+    'phytoplankton3 southern boundary condition'
+    'umolC L-1'                                      ! [umolC L-1]
+    'phy3_south, scalar, series'
+    'phy3_time'
+    'idTbry(isouth,iPhy3)'
+    'nulvar'
+    1.0d0
+
+  'phy4_east'                                        ! Input
+    'phytoplankton4 eastern boundary condition'
+    'umolC L-1'                                      ! [umolC L-1]
+    'phy4_east, scalar, series'
+    'phy4_time'
+    'idTbry(ieast,iPhy4)'
+    'nulvar'
+    1.0d0
+
+  'phy4_west'                                        ! Input
+    'phytoplankton4 western boundary condition'
+    'umolC L-1'                                      ! [umolC L-1]
+    'phy4_west, scalar, series'
+    'phy4_time'
+    'idTbry(iwest,iPhy4)'
+    'nulvar'
+    1.0d0
+
+  'phy4_north'                                        ! Input
+    'phytoplankton4 northern boundary condition'
+    'umolC L-1'                                      ! [umolC L-1]
+    'phy4_north, scalar, series'
+    'phy4_time'
+    'idTbry(inorth,iPhy4)'
+    'nulvar'
+    1.0d0
+
+  'phy4_south'                                        ! Input
+    'phytoplankton4 southern boundary condition'
+    'umolC L-1'                                      ! [umolC L-1]
+    'phy4_south, scalar, series'
+    'phy4_time'
+    'idTbry(isouth,iPhy4)'
+    'nulvar'
+    1.0d0    
+!---------------------ADDED BY AMRI, JAN 2020--------------------------
 
   'zoop_east'                                        ! Input
     'zooplankton eastern boundary condition'
