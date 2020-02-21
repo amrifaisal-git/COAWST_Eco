@@ -718,7 +718,7 @@ CONTAINS
             + Mzoo - Gpoc2zoo - Dpoc - Dpoc2doc
 
 !-------------------Coccolithopores Calcification---------------------------------     
-    rCaCO3_C = (-0.0136d0 * CO2aq) + 1.21d0
+    rCaCO3_C = (-0.0136d0 * CO2aq) + 1.21d0     ! CaCO3 : Corg ratio
     IF (rCaCO3_C <= 0) THEN
         rCaCO3_C = 0.0d0
     END IF
@@ -746,12 +746,15 @@ CONTAINS
     dCaCO3_dt = - CaCO3_dis &
                 + ((Mphy3 + (Gphy32zoo * (1 - e_Gphy42zoo))) * rCaCO3_C) 
 
-    dDIC_dt = Rzoo + (dPO4_dt * rCP)                                      ! DIC change due to organic matter
+    dDIC_dt = Rzoo + Rphy1 + Rphy2 + Rphy3 + Rphy4  &                     ! DIC change due to organic matter
+            + Ddoc + Dpoc                           &
+            - Pphy1 - Pphy2 - Pphy3 - Pphy4
+    dTA_dt  = dDIC_dt * (-rNP/rCP)                                        ! TA change due to organic matter
+
     dDIC_dt = dDIC_dt - (1.0d0 * (CaCO3_for - CaCO3_dis))                 ! DIC change due to CaCO3
+    dTA_dt  = dTA_dt - (2.0d0 * (CaCO3_for - CaCO3_dis))                  ! TA change due to CaCO3
     dDIC_dt = dDIC_dt/rho_sw                                              ! (umol L-1 s-1) -> (umol kg-1 s-1)
 
-    dTA_dt  = 0.0d0 - dNO3_dt                                             ! TA change due to organic matter
-    dTA_dt  = dTA_dt - (2.0d0 * (CaCO3_for - CaCO3_dis))                  ! TA change due to CaCO3
     dTA_dt  = dTA_dt/rho_sw                                               ! (umol L-1 s-1) -> (umol kg-1 s-1)
 #endif      
     RETURN
