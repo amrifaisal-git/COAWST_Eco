@@ -78,11 +78,14 @@
       integer :: iTIC_                  ! Total inorganic carbon
       integer :: iTAlk                  ! Total alkalinity
       integer :: iOxyg                  ! Dissolved oxygen concentration
+      integer :: iCaCO3                 ! Calcium carbonate concentration (ADDED BY AMRI, FEB 2020)
 #if defined ORGANIC_MATTER
       integer :: iDOC_                  ! Dissolved organic C-concentration
       integer :: iPOC_                  ! Particulate organic C-concentration
       integer :: iPhy1                  ! Phytoplankton1 density
       integer :: iPhy2                  ! Phytoplankton2 density
+      integer :: iPhy3                  ! Phytopkankton3 density (ADDED BY AMRI, JAN 2020)
+      integer :: iPhy4                  ! Phytoplankton4 density (ADDED BY AMRI, FEB 2020)
       integer :: iZoop                  ! Zooplankton density
 #endif
 #if defined CARBON_ISOTOPE
@@ -225,11 +228,14 @@
       real(r8), allocatable :: TAlk0(:)              ! umol/kg
       real(r8), allocatable :: TIC_0(:)              ! umol/kg
       real(r8), allocatable :: Oxyg0(:)              ! umol/L
+      real(r8), allocatable :: CaCO30(:)             ! umol/L (ADDED BY AMRi, FEB 2020)
 #if defined ORGANIC_MATTER
       real(r8), allocatable :: DOC_0(:)              ! umol/L
       real(r8), allocatable :: POC_0(:)              ! umol/L
       real(r8), allocatable :: Phy10(:)              ! umol/L
       real(r8), allocatable :: Phy20(:)              ! umol/L
+      real(r8), allocatable :: Phy30(:)              ! umol/L (ADDED BY AMRI, JAN 2020)
+      real(r8), allocatable :: Phy40(:)              ! umol/L (ADDED BY AMRI, FEB 2020)      
       real(r8), allocatable :: Zoop0(:)              ! umol/L
 #endif
 #if defined CARBON_ISOTOPE
@@ -288,6 +294,8 @@
       iTAlk=ic+i
       i=i+1
       iOxyg=ic+i  !  4
+      i=i+1         !(ADDED BY AMRI, FEB 2020)
+      iCaCO3=ic+i   !(ADDED BY AMRI, FEB 2020)
 #if defined ORGANIC_MATTER
       i=i+1
       iDOC_=ic+i
@@ -297,6 +305,10 @@
       iPhy1=ic+i
       i=i+1
       iPhy2=ic+i
+      i=i+1         !(ADDED BY AMRI, JAN 2020)
+      iPhy3=ic+i    !(ADDED BY AMRI, JAN 2020)
+      i=i+1         !(ADDED BY AMRI, FEB 2020)
+      iPhy4=ic+i    !(ADDED BY AMRI, FEB 2020)      
       i=i+1
       iZoop=ic+i
 #endif
@@ -604,6 +616,9 @@
       IF (.not.allocated(Oxyg0)) THEN
         allocate ( Oxyg0(Ngrids) )
       END IF
+      IF (.not.allocated(CaCO30)) THEN    !(ADDED BY AMRI, FEB 2020)
+        allocate ( CaCO30(Ngrids) )       !(ADDED BY AMRI, FEB 2020)
+      END IF                              !(ADDED BY AMRI, FEB 2020)
 #if defined ORGANIC_MATTER
       IF (.not.allocated(DOC_0)) THEN
         allocate ( DOC_0(Ngrids) )
@@ -617,6 +632,12 @@
       IF (.not.allocated(Phy20)) THEN
         allocate ( Phy20(Ngrids) )
       END IF
+      IF (.not.allocated(Phy30)) THEN     !(ADDED BY AMRI, JAN 2020)
+        allocate ( Phy30(Ngrids) )        !(ADDED BY AMRI, JAN 2020)
+      END IF                              !(ADDED BY AMRI, JAN 2020)
+      IF (.not.allocated(Phy40)) THEN     !(ADDED BY AMRI, FEB 2020)
+        allocate ( Phy40(Ngrids) )        !(ADDED BY AMRI, FEB 2020)
+      END IF                              !(ADDED BY AMRI, FEB 2020)      
       IF (.not.allocated(Zoop0)) THEN
         allocate ( Zoop0(Ngrids) )
       END IF

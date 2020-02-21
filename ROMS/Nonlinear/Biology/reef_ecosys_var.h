@@ -39,6 +39,8 @@
                 idTvar(iTAlk)=varid
               CASE ('idTvar(iOxyg)')
                 idTvar(iOxyg)=varid
+              CASE ('idTvar(iCaCO3)')       !(ADDED BY AMRI, FEB 2020)
+                idTvar(iCaCO3)=varid        !(ADDED BY AMRI, FEB 2020)                 
 #if defined ORGANIC_MATTER
               CASE ('idTvar(iDOC_)')
                 idTvar(iDOC_)=varid
@@ -48,6 +50,10 @@
                 idTvar(iPhy1)=varid
               CASE ('idTvar(iPhy2)')
                 idTvar(iPhy2)=varid
+              CASE ('idTvar(iPhy3)')        !(ADDED BY AMRI, JAN 2020)
+                idTvar(iPhy3)=varid         !(ADDED BY AMRI, JAN 2020)
+              CASE ('idTvar(iPhy4)')        !(ADDED BY AMRI, FEB 2020)
+                idTvar(iPhy4)=varid         !(ADDED BY AMRI, FEB 2020)                       
               CASE ('idTvar(iZoop)')
                 idTvar(iZoop)=varid
 #endif
@@ -210,6 +216,8 @@
                 idTads(iTAlk)=varid
               CASE ('idTads(iOxyg)')
                 idTads(iOxyg)=varid
+              CASE ('idTads(iCaCO3)')   !(ADDED BY AMRI, FEB 2020)
+                idTads(iCaCO3)=varid    !(ADDED BY AMRI, FEB 2020)                 
 # if defined ORGANIC_MATTER
               CASE ('idTads(iDOC_)')
                 idTads(iDOC_)=varid
@@ -219,6 +227,10 @@
                 idTads(iPhy1)=varid
               CASE ('idTads(iPhy2)')
                 idTads(iPhy2)=varid
+              CASE ('idTads(iPhy3)')    !(ADDED BY AMRI, JAN 2020)
+                idTads(iPhy3)=varid     !(ADDED BY AMRI, JAN 2020) 
+              CASE ('idTads(iPhy4)')    !(ADDED BY AMRI, FEB 2020)
+                idTads(iPhy4)=varid     !(ADDED BY AMRI, FEB 2020)                           
               CASE ('idTads(iZoop)')
                 idTads(iZoop)=varid
 # endif
@@ -332,6 +344,26 @@
                 idTbry(isouth,iPhy2)=varid
               CASE ('idTbry(inorth,iPhy2)')
                 idTbry(inorth,iPhy2)=varid
+
+!-------------------ADDED BY AMRI, JAN 2020------------------------
+              CASE ('idTbry(iwest,iPhy3)')
+                idTbry(iwest,iPhy3)=varid
+              CASE ('idTbry(ieast,iPhy3)')
+                idTbry(ieast,iPhy3)=varid
+              CASE ('idTbry(isouth,iPhy3)')
+                idTbry(isouth,iPhy3)=varid
+              CASE ('idTbry(inorth,iPhy3)')
+                idTbry(inorth,iPhy3)=varid
+
+              CASE ('idTbry(iwest,iPhy4)')
+                idTbry(iwest,iPhy4)=varid
+              CASE ('idTbry(ieast,iPhy4)')
+                idTbry(ieast,iPhy4)=varid
+              CASE ('idTbry(isouth,iPhy4)')
+                idTbry(isouth,iPhy4)=varid
+              CASE ('idTbry(inorth,iPhy4)')
+                idTbry(inorth,iPhy4)=varid                                
+!-------------------ADDED BY AMRI, JAN 2020------------------------
 
               CASE ('idTbry(iwest,iZoop)')
                 idTbry(iwest,iZoop)=varid
@@ -505,6 +537,8 @@
                 idRtrc(iTAlk)=varid
               CASE ('idRtrc(iOxyg)')
                 idRtrc(iOxyg)=varid
+              CASE ('idRtrc(iCaCO3)')    !(ADDED BY AMRI, FEB 2020)
+                idRtrc(iCaCO3)=varid     !(ADDED BY AMRI, FEB 2020)                 
 #if defined ORGANIC_MATTER
               CASE ('idRtrc(iDOC_)')
                 idRtrc(iDOC_)=varid
@@ -514,6 +548,10 @@
                 idRtrc(iPhy1)=varid
               CASE ('idRtrc(iPhy2)')
                 idRtrc(iPhy2)=varid
+              CASE ('idRtrc(iPhy3)')    !(ADDED BY AMRI, JAN 2020)
+                idRtrc(iPhy3)=varid     !(ADDED BY AMRI, JAN 2020)  
+              CASE ('idRtrc(iPhy4)')    !(ADDED BY AMRI, FEB 2020)
+                idRtrc(iPhy4)=varid     !(ADDED BY AMRI, FEB 2020)                          
               CASE ('idRtrc(iZoop)')
                 idRtrc(iZoop)=varid
 #endif

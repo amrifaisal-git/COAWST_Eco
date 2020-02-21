@@ -386,11 +386,14 @@
      &            ,t(i,j,:,nstp,iTIC_)     &   ! DIC(N): Total dissolved inorganic carbon (DIC: umol kg-1)
      &            ,t(i,j,:,nstp,iTAlk)     &   ! TA (N): Total alkalinity (TA: umol kg-1)
      &            ,t(i,j,:,nstp,iOxyg)     &   ! DOx(N): Dissolved oxygen (umol L-1)
+     &            ,t(i,j,:,nstp,iCaCO3)    &   ! CaCO3(N): Calcium carbonate (umol L-1) --ADDED BY AMRI, FEB 2020--    
 #if defined ORGANIC_MATTER
      &            ,t(i,j,:,nstp,iDOC_)     &   ! DOC(N): Dissolved organic carbon (DOC: umol L-1)
      &            ,t(i,j,:,nstp,iPOC_)     &   ! POC(N): Particulate organic carbon (POC: umol L-1)
      &            ,t(i,j,:,nstp,iPhy1)     &   ! PHY1(N): phytoplankton1 (umol C L-1)
      &            ,t(i,j,:,nstp,iPhy2)     &   ! PHY2(N): phytoplankton2 (umol C L-1)
+     &            ,t(i,j,:,nstp,iPhy3)     &   ! PHY3(N): phytoplankton3 (umol C L-1) --ADDED BY AMRI, JAN 2020-- 
+     &            ,t(i,j,:,nstp,iPhy4)     &   ! PHY4(N): phytoplankton4 (umol C L-1) --ADDED BY AMRI, FEB 2020--          
      &            ,t(i,j,:,nstp,iZoop)     &   ! ZOO(N): zooplankton (umol C L-1)
 #endif
 #if defined CARBON_ISOTOPE
@@ -416,11 +419,14 @@
      &            ,dtrc_dt(:,iTIC_)   &   ! dDIC_dt(N): dDIC/dt (umol kg-1 s-1)
      &            ,dtrc_dt(:,iTAlk)   &   ! dTA_dt (N): dTA/dt (umol kg-1 s-1)
      &            ,dtrc_dt(:,iOxyg)   &   ! dDOx_dt(N): dDO/dt (umol L-1 s-1)
+     &            ,dtrc_dt(:,iCaCO3)  &   ! dCaCO3_dt(N): dCaCO3/dt (umol L-1 s-1) --ADDED BY AMRI, FEB 2020--     
 #if defined ORGANIC_MATTER
      &            ,dtrc_dt(:,iDOC_)   &   ! dDOC_dt(N): dDOC/dt (umol L-1 s-1)
      &            ,dtrc_dt(:,iPOC_)   &   ! dPOC_dt(N): dPOC/dt (umol L-1 s-1)
      &            ,dtrc_dt(:,iPhy1)   &   ! dPHY1_dt(N): dPHY1/dt (umol C L-1 s-1)
      &            ,dtrc_dt(:,iPhy2)   &   ! dPHY2_dt(N): dPHY2/dt (umol C L-1 s-1)
+     &            ,dtrc_dt(:,iPhy3)   &   ! dPHY3_dt(N): dPHY3/dt (umol C L-1 s-1) --ADDED BY AMRI, JAN 2020--
+     &            ,dtrc_dt(:,iPhy4)   &   ! dPHY4_dt(N): dPHY4/dt (umol C L-1 s-1) --ADDED BY AMRI, FEB 2020--         
      &            ,dtrc_dt(:,iZoop)   &   ! dZOO_dt(N): dZOO/dt (umol C L-1 s-1)
 #endif
 #if defined CARBON_ISOTOPE

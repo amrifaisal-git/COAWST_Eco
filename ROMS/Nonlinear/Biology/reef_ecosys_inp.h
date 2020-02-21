@@ -146,6 +146,8 @@
               Npts=load_r(Nval, Rval, Ngrids, TIC_0)
             CASE ('Oxyg0')
               Npts=load_r(Nval, Rval, Ngrids, Oxyg0)
+            CASE ('CaCO30')                             !(ADDED BY AMRI, FEB 2020)
+              Npts=load_r(Nval, Rval, Ngrids, CaCO30)   !(ADDED BY AMRI, FEB 2020)          
 #if defined ORGANIC_MATTER
             CASE ('DOC_0')
               Npts=load_r(Nval, Rval, Ngrids, DOC_0)
@@ -155,6 +157,10 @@
               Npts=load_r(Nval, Rval, Ngrids, Phy10)
             CASE ('Phy20')
               Npts=load_r(Nval, Rval, Ngrids, Phy20)
+            CASE ('Phy30')                              !(ADDED BY AMRI, JAN 2020)
+              Npts=load_r(Nval, Rval, Ngrids, Phy30)    !(ADDED BY AMRI, JAN 2020) 
+            CASE ('Phy40')                              !(ADDED BY AMRI, FEB 2020)
+              Npts=load_r(Nval, Rval, Ngrids, Phy40)    !(ADDED BY AMRI, FEB 2020)                          
             CASE ('Zoop0')
               Npts=load_r(Nval, Rval, Ngrids, Zoop0)
 #endif
@@ -588,6 +594,8 @@
      &            'Total dissolved inorganic carbon (umol/kg).'
             WRITE (out,80) Oxyg0(ng), 'Oxyg0',                          &
      &            'Dissolved oxygen (umol/L).'
+            WRITE (out,80) CaCO30(ng), 'CaCO30',                        &   !(ADDED BY AMRI, FEB 2020)
+     &            'Calcium carbonate (umol/L).'                             !(ADDED BY AMRI, FEB 2020)
 #if defined ORGANIC_MATTER
             WRITE (out,80) DOC_0(ng), 'DOC_0',                          &
      &            'Dissolved organic carbon (umolC/L).'
@@ -597,6 +605,10 @@
      &            'Phytoplankton1 (umolC/L).'
             WRITE (out,80) Phy20(ng), 'Phy20',                          &
      &            'Phytoplankton2 (umolC/L).'
+            WRITE (out,80) Phy30(ng), 'Phy30',                          &   !(ADDED BY AMRI, JAN 2020)
+     &            'Phytoplankton3 (umolC/L).'                               !(ADDED BY AMRI, JAN 2020)
+            WRITE (out,80) Phy40(ng), 'Phy40',                          &   !(ADDED BY AMRI, FEB 2020)
+     &            'Phytoplankton4 (umolC/L).'                               !(ADDED BY AMRI, FEB 2020)     
             WRITE (out,80) Zoop0(ng), 'Zoop0',                          &
      &            'Zooplankton (umolC/L).'
 #endif
